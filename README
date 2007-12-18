@@ -1,0 +1,15 @@
+This is a mirror of http://www.vim.org/scripts/script.php?script_id=2103
+
+This is an improved version of kwbd.vim. It allows you to delete a buffer without closing the window. It meets the following criteria:
+
+
+    * The window layout must be kept in all circumstances.
+    * If there is an alternate buffer must be showing that.
+    * If there is not alternate buffer then must be showing the preious buffer.
+    * If there is no alternate nor previous buffer (it is the only buffer) must show an empty buffer. 
+
+If there are two windows with the same buffer open, both windows will remain open, and the buffer will be deleted
+
+To delete a buffer while keeping the window open, just type \bd
+
+Thanks to the authors of kwbd.vim and minibufexpl.vim!
