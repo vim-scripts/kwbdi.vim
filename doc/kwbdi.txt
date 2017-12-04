@@ -1,0 +1,39 @@
+*kwbdi.txt* Delete a buffer while keeping the window open
+
+==============================================================================
+Introduction                                                      *kwbdi*
+
+In order to unload and delete a buffer from the buffer list :bd is your friend 
+(:h bd). 
+An oftern unpleasent side effect is that this also closes the window changing
+the window layout. 
+
+Kwbdi allows you to delete a buffer without closing the window. 
+It meets the following criteria:
+
+    * The window layout must be kept in all circumstances.
+    * If there is an alternate buffer must be showing that.
+    * If there is not alternate buffer then must be showing the previous buffer.
+    * If there is no alternate nor previous buffer (it is the only buffer) 
+      must show an empty buffer. 
+
+If there are two windows with the same buffer open, 
+both windows will remain open, and the buffer will be deleted
+
+==============================================================================
+Usage                                                            *kwbdi-usage*
+
+<leader>bd    Delete current buffer while keeping the window open.
+              Throws error and doesn't delete buffer if buffer is modified 
+              (safe option)
+
+<leader>bD    Same as above but changes in current buffer are discarded 
+              without asking (be careful!).
+================================================================================
+Credits                                                          *kwbdi-credits*
+
+Thanks to the authors of kwbd.vim and minibufexpl.vim!
+
+Improvements by:
+Ben Booth https://github.com/vim-scripts/kwbdi.vim
+Brett Kosinski https://github.com/fancypantalons/kwbdi.vim

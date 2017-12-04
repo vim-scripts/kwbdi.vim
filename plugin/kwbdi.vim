@@ -12,6 +12,7 @@ let loaded_kwbd = 1
 
 if !hasmapto('<Plug>Kwbd')
   map <unique> <Leader>bd <Plug>Kwbd
+  map <unique> <Leader>bD <Plug>KwbdForce
 endif
 
 noremap <unique> <script> <Plug>Kwbd  :call <SID>KwbdSafe()<CR>:<BS>
