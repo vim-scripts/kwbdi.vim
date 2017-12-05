@@ -1,7 +1,7 @@
 *kwbdi.txt* Delete a buffer while keeping the window open
 
 ==============================================================================
-Introduction                                                      *kwbdi*
+Introduction                                                           *kwbdi*
 
 In order to unload and delete a buffer from the buffer list :bd is your friend 
 (:h bd). 
@@ -28,7 +28,22 @@ Usage                                                            *kwbdi-usage*
               (safe option)
 
 <leader>bD    Same as above but changes in current buffer are discarded 
-              without asking (be careful!).
+              without asking simulating :bd! (be careful!).
+
+================================================================================
+Alternatives                                                *kwbdi-alternatives*
+
+bufkill.vim (http://www.vim.org/scripts/script.php?script_id=1147)
+
+The mapping gives similar behaviour:
+
+  :nmap <leader>bd :b#<bar>bd#<CR>
+
+  :command Bd bp\|bd \#
+  
+Credit for those solutions contributors of this thread:
+https://stackoverflow.com/questions/4298910/vim-close-buffer-but-not-split-window
+
 ================================================================================
 Credits                                                          *kwbdi-credits*
 
