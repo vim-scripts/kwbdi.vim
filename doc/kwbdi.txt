@@ -3,32 +3,32 @@
 ==============================================================================
 Introduction                                                           *kwbdi*
 
-In order to unload and delete a buffer from the buffer list :bd is your friend 
-(:h bd). 
-An oftern unpleasent side effect is that this also closes the window changing
-the window layout. 
+In order to unload and delete a buffer from the buffer list, :bd is your friend
+(:h bd).  An often unpleasant side effect is that this also closes the window
+changing the window layout. 
 
-Kwbdi allows you to delete a buffer without closing the window. 
-It meets the following criteria:
+Kwbdi allows you to delete a buffer without closing the window.  It meets the
+following criteria:
 
     * The window layout must be kept in all circumstances.
-    * If there is an alternate buffer must be showing that.
-    * If there is not alternate buffer then must be showing the previous buffer.
-    * If there is no alternate nor previous buffer (it is the only buffer) 
+    * If there is an alternate buffer, the window must show that instead.
+    * If there is no alternate buffer then the window must show the previous
+      buffer.
+    * If there is no alternate nor previous buffer (it is the only buffer) it
       must show an empty buffer. 
 
-If there are two windows with the same buffer open, 
-both windows will remain open, and the buffer will be deleted
+If there are two windows with the same buffer open, both windows will remain
+open, and the buffer will be deleted.
 
 ==============================================================================
 Usage                                                            *kwbdi-usage*
 
-<leader>bd    Delete current buffer while keeping the window open.
-              Throws error and doesn't delete buffer if buffer is modified 
+<leader>bd    Delete the current buffer while keeping the window open.
+              Throws an error and doesn't delete the buffer if it is modified 
               (safe option)
 
-<leader>bD    Same as above but changes in current buffer are discarded 
-              without asking simulating :bd! (be careful!).
+<leader>bD    Same as above but changes in the current buffer are discarded 
+              without asking, simulating :bd! (be careful!).
 
 ================================================================================
 Alternatives                                                *kwbdi-alternatives*
@@ -41,7 +41,7 @@ The mapping gives similar behaviour:
 
   :command Bd bp\|bd \#
   
-Credit for those solutions contributors of this thread:
+Credit for those solutions and contributors of this thread:
 https://stackoverflow.com/questions/4298910/vim-close-buffer-but-not-split-window
 
 ================================================================================
@@ -52,3 +52,4 @@ Thanks to the authors of kwbd.vim and minibufexpl.vim!
 Improvements by:
 Ben Booth https://github.com/vim-scripts/kwbdi.vim
 Brett Kosinski https://github.com/fancypantalons/kwbdi.vim
+seb-mueller https://github.com/seb-mueller/kwbdi.vim
