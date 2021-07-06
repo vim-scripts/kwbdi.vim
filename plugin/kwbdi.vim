@@ -12,11 +12,27 @@ let loaded_kwbd = 1
 
 if !hasmapto('<Plug>Kwbd')
   map <unique> <Leader>bd <Plug>Kwbd
+  map <unique> <Leader>bD <Plug>KwbdForce
 endif
 
-noremap <unique> <script> <Plug>Kwbd  :call <SID>Kwbd(1)<CR>:<BS>
+noremap <unique> <script> <Plug>Kwbd  :call <SID>KwbdSafe()<CR>:<BS>
+noremap <unique> <script> <Plug>KwbdForce  :call <SID>KwbdForce()<CR>:<BS>
 
 "delete the buffer; keep windows
+function <SID>KwbdSafe()
+  let g:kwbdBufNum = bufnr("%")
+  if getbufvar(g:kwbdBufNum, '&modified')
+    echoerr 'No write since last change for buffer '.bufname('%')
+    return
+  endif
+
+  call <SID>Kwbd(1)
+endfunction
+
+function <SID>KwbdForce()
+  call <SID>Kwbd(1)
+endfunction
+
 function <SID>Kwbd(kwbdStage)
   if(a:kwbdStage == 1)
     let g:kwbdBufNum = bufnr("%")
